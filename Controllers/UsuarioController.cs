@@ -43,11 +43,9 @@ namespace TarefasAPI.Models
        }
 
        [HttpDelete]
-       public async Task<IActionResult> DeleteCategoria(int id){
+       public async Task<IActionResult> DeleteUsuario(int id){
             var sql = @"DELETE tbUsuario WHERE idUsuario = @idUsuario";
-             var result = await _databaseConnection.ExecuteAsync(sql, new {
-                idCategoria = id
-             });
+             var result = await _databaseConnection.ExecuteAsync(sql, new { idUsuario = id});
              return Ok(new { RowsAffected = result });
        }
     }
